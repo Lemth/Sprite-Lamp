@@ -1,0 +1,2 @@
+spritelamp_draw();
+
