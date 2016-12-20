@@ -1,5 +1,4 @@
 // Sprite Lamp's basic shader, by Finn Morgan
-// With contributions from K. Alex Mills
 
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
@@ -24,12 +23,10 @@ uniform vec3 sl_UpperAmbientColour;
 uniform vec3 sl_LowerAmbientColour;
 
 
+uniform vec3 sl_LightPos;
 uniform vec2 sl_TextureRes;
+uniform vec3 sl_LightColour;
 
-uniform vec3 sl_LightPosArray[4];
-uniform vec3 sl_LightColourArray[4];
-
-uniform int sl_numLights;
 
 void main()
 {
@@ -57,12 +54,11 @@ void main()
     ambientColour += emissiveColour.rgb * sl_EmissiveStrength;
     
     vec3 colourFromLights = vec3(0.0, 0.0, 0.0);
+    //Everything in this block is calculations for an individual light. This is the bit that
+    //has to be looped through and added together 
     
-    
-    //Lighting calculations per light.
-    for (int i = 0; i < sl_numLights; i++)
     {
-        vec3 lightDirection = sl_LightPosArray[i] - v_worldPos;
+        vec3 lightDirection = sl_LightPos - v_worldPos;
         float lightDistance = length(lightDirection);
         lightDirection = v_rotationMatrix * lightDirection; //We need the light direction in object space for shadow casting.
         lightDirection = normalize(lightDirection);
@@ -76,8 +72,6 @@ void main()
         vec3 tapPos = vec3(v_vTexcoord, thisHeight + 0.1);
         //This loop traces along the light ray and checks if that ray is inside the depth map at each point.
         //If it is, darken that pixel a bit.
-        //NB: IF YOU WANT TO TURN OFF SHADOWS, REMOVE THIS LOOP AND JUST
-        //SET 'shadowMult' TO 1.0. IT WILL MAKE YOUR SHADER FASTER.
         for (int i = 0; i < 8; i++)
         {
             tapPos += moveVec;
@@ -126,12 +120,11 @@ void main()
         }
             
         //float diffuseLevel = normalDotLight;
-        vec3 diffuseComponent = diffuseLevel * diffuseColour.rgb * sl_LightColourArray[i];
-        vec3 specularComponent = specularLevel * specGlossColour.rgb * sl_LightColourArray[i];
+        vec3 diffuseComponent = diffuseLevel * diffuseColour.rgb * sl_LightColour;
+        vec3 specularComponent = specularLevel * specGlossColour.rgb * sl_LightColour;
         colourFromLights += diffuseComponent;
         colourFromLights += specularComponent;
     }
-    
     
     gl_FragColor = vec4(ambientColour + colourFromLights, diffuseColour.a);
 

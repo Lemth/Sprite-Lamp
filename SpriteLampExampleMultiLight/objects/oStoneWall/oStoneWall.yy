@@ -1,28 +1,28 @@
 {
-    "id": "849d787a-14a8-42da-8137-f51254be478a",
+    "id": "656a32e6-6694-4b01-84ec-76521ee658f3",
     "modelName": "GMObject",
     "mvc": "1.0",
     "name": "oStoneWall",
     "eventList": [
         {
-            "id": "a66f0b03-4e4c-4d87-a38a-ab6dfcfd2bf5",
+            "id": "b7b52be8-3f72-4164-9c13-a4dbac5f0819",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "849d787a-14a8-42da-8137-f51254be478a"
+            "m_owner": "656a32e6-6694-4b01-84ec-76521ee658f3"
         },
         {
-            "id": "55948fb8-8934-4e37-8dda-9ff11d03f6e5",
+            "id": "6613d53f-b8da-4271-b3c3-589337780496",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 8,
-            "m_owner": "849d787a-14a8-42da-8137-f51254be478a"
+            "m_owner": "656a32e6-6694-4b01-84ec-76521ee658f3"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -40,14 +40,14 @@
     "physicsShape": 0,
     "physicsShapePoints": [
         {
-            "id": "506fe2b3-3cf6-40c0-a45d-0d6a2d398b65",
+            "id": "c08cd527-d0a8-4720-a36a-58a2c46e4a12",
             "modelName": "GMPoint",
             "mvc": "1.0",
             "x": 0,
             "y": 0
         },
         {
-            "id": "6198bcc1-6470-420f-b1ae-6aa96a377beb",
+            "id": "f931e474-650e-4737-af49-c9e1c25bd375",
             "modelName": "GMPoint",
             "mvc": "1.0",
             "x": 256,
@@ -56,6 +56,6 @@
     ],
     "physicsStartAwake": true,
     "solid": false,
-    "spriteId": "10ebbf90-0a86-4e8b-8765-02299387a480",
+    "spriteId": "f8a87997-81ce-40d6-a5f9-4c267c314af3",
     "visible": true
 }

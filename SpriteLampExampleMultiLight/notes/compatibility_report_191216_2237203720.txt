@@ -1,0 +1,13 @@
+Converting GML script : ${project_dir}\objects\oLightSource\Draw_0.gml
+Converted builtin : line 10 : view_xview[view_current] -> __view_get( e__VW.XView, view_current )
+Converted builtin : line 11 : view_yview[view_current] -> __view_get( e__VW.YView, view_current )
+Converted builtin : line 12 : view_wview[view_current] -> __view_get( e__VW.WView, view_current )
+Converted builtin : line 18 : view_wview[view_current] -> __view_get( e__VW.WView, view_current )
+Converted builtin : line 13 : view_hview[view_current] -> __view_get( e__VW.HView, view_current )
+Converted builtin : line 19 : view_hview[view_current] -> __view_get( e__VW.HView, view_current )
+
+macOS icon ${options_dir}\mac\icons\icon512.png written out as 32-bit.
+game speed set to 30
+added compatibility script view/__view_get.gml
+added compatibility script view/__init_view.gml
+added compatibility script __init_global.gml
