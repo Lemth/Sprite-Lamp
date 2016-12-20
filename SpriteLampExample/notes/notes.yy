@@ -1,5 +1,5 @@
 {
-    "id": "8d2ee5fa-cb06-4c1c-a40c-be78d229b054",
+    "id": "4724dfe8-bcbe-44f3-90dd-7bbf74ecfa1a",
     "modelName": "GMNotes",
     "mvc": "1.0",
     "name": "notes"

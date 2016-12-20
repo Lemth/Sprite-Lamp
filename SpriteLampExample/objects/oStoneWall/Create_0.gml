@@ -4,36 +4,7 @@
 //the bits where you set your desired values for stuff.
 
 
-/********************************************************************************/
-//A whole bunch of shader variables - the 'u_' prefix means 'uniform variable'.
-//These are just hooks to communicate with the shader.
-
-//Maps. Note that we don't have to do the diffuse map - that's included as the
-//base texture (gm_BaseTexture) automatically.
-u_NormalDepthMap = shader_get_sampler_index(SpriteLampShader, "sl_NormalDepthMap");
-u_SpecGlossMap = shader_get_sampler_index(SpriteLampShader, "sl_SpecGlossMap");
-u_AOMap = shader_get_sampler_index(SpriteLampShader, "sl_AOMap");
-u_EmissiveMap = shader_get_sampler_index(SpriteLampShader, "sl_EmissiveMap");
-
-//Sprite Lamp variables that are handled by scripts
-u_LightPos = shader_get_uniform(SpriteLampShader, "sl_LightPos");
-u_SpriteAngle = shader_get_uniform(SpriteLampShader, "sl_SpriteAngle");
-u_TextureRes = shader_get_uniform(SpriteLampShader, "sl_TextureRes");
-u_LightColour = shader_get_uniform(SpriteLampShader, "sl_LightColour");
-
-//Sprite Lamp variables that are set by the user
-u_CelLevel = shader_get_uniform(SpriteLampShader, "sl_CelLevel");
-u_Shininess = shader_get_uniform(SpriteLampShader, "sl_Shininess");
-u_WrapAroundLevel = shader_get_uniform(SpriteLampShader, "sl_WrapAroundLevel");
-u_AOStrength = shader_get_uniform(SpriteLampShader, "sl_AOStrength");
-u_EmissiveStrength = shader_get_uniform(SpriteLampShader, "sl_EmissiveStrength");
-u_AmplifyDepth = shader_get_uniform(SpriteLampShader, "sl_AmplifyDepth");
-
-u_UpperAmbientColour = shader_get_uniform(SpriteLampShader, "sl_UpperAmbientColour");
-u_LowerAmbientColour = shader_get_uniform(SpriteLampShader, "sl_LowerAmbientColour");
-/********************************************************************************/
-
-
+spritelamp_sethooks();
 
 /********************************************************************************/
 //Set your different maps here! Note that your diffuse map isn't done this way - 
@@ -74,7 +45,10 @@ lowerAmbient_Blue = 0.03;
 
 
 //The nearest lightsource.
-lightSource = instance_nearest(x,y,oLightSource);
+numLights = 4;
+
+spritelamp_updatelights();
+
 
 
 /* */

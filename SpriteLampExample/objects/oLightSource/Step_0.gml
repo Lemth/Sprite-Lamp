@@ -1,4 +1,4 @@
-if (keyboard_check(vk_up))
+/*if (keyboard_check(vk_up))
 {
     y -= 2;
 }
@@ -13,5 +13,7 @@ if (keyboard_check(vk_left))
 if (keyboard_check(vk_right))
 {
     x += 2;
-}
+}*/
 
+/* */
+/*  */

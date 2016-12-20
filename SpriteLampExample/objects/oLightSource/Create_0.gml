@@ -10,7 +10,7 @@ zPosition = 1.0;
 
 //Simply the colour of the light. Reduce all three to make the light less
 //bright.
-colourRed = 1.0;
-colourGreen = 0.95;
-colourBlue = 0.8;
+colourRed = 0.50;
+colourGreen = 0.45;
+colourBlue = 0.4;
 
